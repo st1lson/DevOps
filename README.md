@@ -1,7 +1,7 @@
 # How to run
 # Create container
 #### Create container
-```docker build -t node -f Dockerfile .```
+```docker build -t st1lson/dev_ops -f Dockerfile .```
 #### or pull container
 ```docker pull st1lson/dev_ops:latest```
 # Run docker container
