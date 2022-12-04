@@ -1,9 +1,9 @@
 name: Analyzer
 on:
   push:
-    branches: [ci-cd]
+    branches: [ci-cd, main]
   pull_request:
-    branches: [ci-cd]
+    branches: [ci-cd, main]
 jobs:
   clean-up:
     runs-on: ubuntu-latest
