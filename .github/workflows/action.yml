@@ -39,7 +39,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           tags: ${{ secrets.DOCKERHUB_PROFILE }}/dev_ops:latest
-          outputs: type=docker,dest=/tmp/docker-task.tar
+          outputs: type=docker,dest=/tmp/dev_ops.tar
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
