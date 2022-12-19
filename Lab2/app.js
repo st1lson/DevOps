@@ -1,11 +1,20 @@
 const http = require("http");
 
+const url = require("url");
+
 const PORT = 80;
 
-const listener = (_req, res) => {
+const listener = (req, res) => {
+    const reqUrl = url.parse(req.url).pathname;
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
-    res.end("Some text here");
+    if (req.method !== "GET") return;
+
+    if (reqUrl === "/") {
+        res.end("Some text here");
+    } else if (reqUrl === "/health-check") {
+        res.end("Health check - OK");
+    }
 };
 
 const server = http.createServer(listener);
